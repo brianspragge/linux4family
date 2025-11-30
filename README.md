@@ -1,6 +1,38 @@
 # linux4family
 Extremely Easy Linux Installation &amp; Post-Install Setup Guide (Arch, KDE-Plasma)
 
+## Prepare USB
+
+1. Download Ventoy and install it onto your USB
+   →https://www.ventoy.net/en/download.html
+2. Download Arch iso and sig(Or ask me for it)
+   →https://archlinux.org/download/
+3. Copy the verified arch.iso file onto the USB
+
+---
+
+## Reboot PC into USB
+
+1. Shut down → Turn on
+2. Follow on-screen instructions for booting into USB
+3. Choose **Temporary startup device** (usually F12) → Select your USB
+3. Screen should show **VENTOY**
+4. Select **archlinux-*yyyy.mm.dd*-x86_64.iso** → **Boot in normal mode**
+
+---
+
+## Connect to Wifi for **archinstall**
+
+```bash
+iwctl
+station wlan0 scan
+station wlan0 connect "your-wifi-name"
+quit
+archinstall
+```
+
+---
+
 ## Installation Settings (Archinstall)
 
 | Option                        | Setting                                      |
@@ -50,6 +82,7 @@ git clone https://github.com/brianspragge/linux4family.git
 ```bash
 sudo vim /etc/kernel/cmdline
 ```
+
 → Add ` splash quiet` at the end of the line  
 → Press `i` → edit → `Esc` → `:wq` → Enter
 
