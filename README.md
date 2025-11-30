@@ -15,13 +15,21 @@ Extremely Easy Linux Installation &amp; Post-Install Setup Guide (Arch, KDE-Plas
 
 1. Shut down → Turn on
 2. Follow on-screen instructions for booting into USB
-3. Choose **Temporary startup device** (usually F12) → Select your USB
+3. Choose **Temporary startup device** (usually F12) → Choose your USB
 3. Screen should show **VENTOY**
-4. Select **archlinux-*yyyy.mm.dd*-x86_64.iso** → **Boot in normal mode**
+4. Select **archlinux-*yyyy.mm.dd*-x86_64.iso** → Enter → **Boot in normal mode** → Enter
+
+---
+
+You should now see this:
+
+![Booted into arch from USB](arch-linux.png)
 
 ---
 
 ## Connect to Wifi for **archinstall**
+
+1. Run the following commands one by one:
 
 ```bash
 iwctl
@@ -59,6 +67,8 @@ archinstall
 | **Timezone**                  | `America/Los_Angeles`                        |
 | **NTP**                       | Enabled                                      |
 
+1. Reboot and remove USB
+
 ---
 
 ## After First Successful Boot
@@ -74,6 +84,9 @@ makepkg -si
 git config --global commit.gpgsign true
 git clone https://github.com/brianspragge/linux4family.git
 ```
+
+> Optional: Copy useful dotfiles from the `personal` repo to ~/ and ~/.local/bin 
+> Recommended: `.bashrc`, `.vimrc`, `.inputrc`, `~/.local/bin/gpgcli`
 
 ---
 
@@ -94,9 +107,6 @@ sudo vim /etc/kernel/cmdline
 2. Top right → **Import** → **Custom Scheme**  
 3. Click **Select File** → Choose `~/personal/kdeplasma/dev/user/kde-keybind-schema.kksrc`  
 4. Click **Apply**
-
-> Optional: Copy useful dotfiles from the `personal` repo to ~/ and ~/.local/bin 
-> Recommended: `.bashrc`, `.vimrc`, `.inputrc`, `~/.local/bin/gpgcli`
 
 ---
 
