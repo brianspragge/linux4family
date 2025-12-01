@@ -1,6 +1,8 @@
 # linux4family
 Extremely Easy Linux Installation &amp; Post-Install Setup Guide (Arch, KDE-Plasma)
 
+**Turn off SecureBoot in your BIOS before starting**
+
 ## Prepare USB
 
 1. Download Ventoy and install it onto your USB
@@ -21,6 +23,7 @@ Extremely Easy Linux Installation &amp; Post-Install Setup Guide (Arch, KDE-Plas
 
 ---
 
+1. Once booted into USB, select top option.
 You should now see this:
 
 ![Booted into arch from USB](arch-linux.png)
@@ -43,31 +46,30 @@ archinstall
 
 ## Installation Settings (Archinstall)
 
+If it is not mentioned, use the default
+
 | Option                        | Setting                                      |
 |-------------------------------|----------------------------------------------|
-| **SecureBoot**                | Turn off SecureBoot                          |
 | **Mirrors**                   | United States                                |
-| **Partition**                 | BTRFS (autosuggested compression)            |
+| **Partition**                 | BTRFS (autosuggested, single partition, compression) |
 | **LVM**                       | No                                           |
 | **Disk encryption**           | No                                           |
 | **Btrfs snapshots**           | No                                           |
 | **Swap**                      | Enabled                                      |
 | **Bootloader**                | systemd-boot                                 |
-| **Unified kernel**            | Yes                                          |
+| **Unified kernel image**      | Yes                                          |
 | **Hostname**                  | Example: `workstation` / `laptop` / `homepc` |
 | **Authentication**            | Example: `root` / `yourname` / `guest`       |
 | **Profile**                   | KDE Plasma                                   |
-| **Graphics**                  | All open-source                              |
-| **Greeter**                   | SDDM                                         |
 | **Applications**              | Bluetooth Enabled                            |
 | **Audio**                     | PipeWire                                     |
 | **Kernel**                    | `linux-lts`                                  |
 | **Network**                   | NetworkManager                               |
-| **Additional packages**       | `base-devel breeze-plymouth coreutils git intel-media-driver intel-ucode kde-applications less plymouth-kcm sddm-kcm xdg-user-dirs xorg-xwayland vim` |
+| **Additional packages**       | `base-devel breeze-plymouth coreutils git intel-media-driver intel-ucode kde-applications less plymouth-kcm sddm-kcm vim xdg-user-dirs xorg-xwayland` |
 | **Timezone**                  | `America/Los_Angeles`                        |
 | **NTP**                       | Enabled                                      |
 
-1. Reboot and remove USB
+1. After finishing full install, reboot and remove USB
 
 ---
 
@@ -82,7 +84,7 @@ git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg -si
 git config --global commit.gpgsign true
-git clone https://github.com/brianspragge/linux4family.git
+cd; git clone https://github.com/brianspragge/linux4family.git
 ```
 
 > Optional: Copy useful dotfiles from the `personal` repo to ~/ and ~/.local/bin 
@@ -121,12 +123,12 @@ sudo vim /etc/kernel/cmdline
    - Enable **Dim Inactive**  
 
 3. **Task Switcher**  
-   - Change from "Thumbnail Grid" to **Compact**  
+   - Change from "Thumbnail Grid" to **Large Icons**  
 
 4. **Window Behavior**  
    - Activation policy: **Focus follows mouse (mouse precedence)**  
    - Delay focus: **100 ms**  
-   - Enable **Raise on hover**, delay: **100 ms**  
+   - Enable **Raise on hover**, delay: **500 ms**  
 
 5. **Window Actions**  
    - Inactive Inner Window Actions, Left click: **Activate, raise and pass click**  
