@@ -65,7 +65,7 @@ If it is not mentioned, use the default
 | **Audio**                     | PipeWire                                     |
 | **Kernel**                    | `linux-lts`                                  |
 | **Network**                   | NetworkManager                               |
-| **Additional packages**       | `base-devel breeze-plymouth coreutils git intel-media-driver intel-ucode kde-applications less plymouth-kcm sddm-kcm vim xdg-user-dirs xorg-xwayland` |
+| **Additional packages**       | `base-devel breeze-plymouth coreutils git intel-media-driver intel-ucode kde-applications libreoffice-still less plymouth-kcm sddm-kcm vim xdg-user-dirs xorg-xwayland` |
 | **Timezone**                  | `America/Los_Angeles`                        |
 | **NTP**                       | Enabled                                      |
 
