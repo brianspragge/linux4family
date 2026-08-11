@@ -1,5 +1,5 @@
 # linux4family
-Extremely Easy Linux Installation &amp; Post-Install Setup Guide (Arch, KDE-Plasma)
+Not So Easy Linux Installation &amp; Post-Install Setup Guide (Arch, KDE-Plasma)
 
 **Turn off SecureBoot in your BIOS before starting**
 
